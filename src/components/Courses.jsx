@@ -13,7 +13,7 @@ const Courses = () => {
 
     const fetchCourses = async () => {
       try { 
-        const response = await axios.get("https://coursera-backend-b8tx.onrender.com/user/courses", {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/courses`, {
           headers: {
             authorization: token
         }   

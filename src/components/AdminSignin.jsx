@@ -23,7 +23,7 @@ export default function AdminSignin(){
     const handleSignIpSubmission = async (event) => {
       event.preventDefault();
       try{
-        const response = await axios.post("http://localhost:5000/admin/login", {username, password});
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/admin/login`, {username, password});
         console.log(response.data.token);
         setToken(response.data.token)
         

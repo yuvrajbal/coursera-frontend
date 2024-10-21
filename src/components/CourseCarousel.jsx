@@ -6,7 +6,7 @@ export default function ScrollContainer(){
 
     const fetchCourses  = async () => {
       try{
-        const response = await axios.get("http://localhost:5000/course/allcourses")
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/course/allcourses`)
         const urls = response.data.courses.map((course) => course.imageUrl);
         setImageUrls(urls)
       } catch(err){

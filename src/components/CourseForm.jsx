@@ -73,7 +73,7 @@ export default function CourseForm ({course , setCourse , handleCancel, handleSu
               Course Image
             </label>
             <UploadButton
-                url="http://localhost:5000/api/uploadthing"
+                url={`${process.env.REACT_APP_BACKEND_URL}/api/uploadthing`}
                 endpoint="imageUploader"
                 onClientUploadComplete={(res) => {
                   console.log("Files: ", res);

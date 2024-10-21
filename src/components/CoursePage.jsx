@@ -9,7 +9,7 @@ export default function CoursePage(){
   const [course, setCourse] = useState()
   useEffect(() => {
     const fetchCourse = async () => {
-      const response = await axios.get(`http://localhost:5000/user/course/${courseId}`, {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/course/${courseId}`, {
         headers: {
           authorization: token
         }

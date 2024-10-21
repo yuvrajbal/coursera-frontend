@@ -9,7 +9,7 @@ export default function AdminCourses(){
   useEffect(() => {
     const fetchCourses = async () => {
       try{
-        const response = await axios.get("https://coursera-backend-b8tx.onrender.com/admin/courses", {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/courses`, {
           headers: {
             authorization: token
           }

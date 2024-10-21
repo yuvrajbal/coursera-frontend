@@ -3,9 +3,12 @@
 import { UploadButton } from "@uploadthing/react";
 import { UploadDropzone } from "@uploadthing/react";
 
-export const OurUploadButton = () => (
-  <UploadButton
-    url="http://localhost:5000/api/uploadthing"
+const OurUploadButton = () => {
+  let uploadLink = `${process.env.REACT_APP_BACKEND_URL}/api/uploadthing`;
+
+  return (
+    <UploadButton
+    url={uploadLink}
     endpoint="imageUploader"
     onClientUploadComplete={(res) => {
       console.log("Files: ", res);
@@ -30,7 +33,9 @@ export const OurUploadButton = () => (
       console.log("Accepted files: ", acceptedFiles);
     }}
   />
-);
+  )
+  
+};
 
 export const FileUploader = () => {
   return (

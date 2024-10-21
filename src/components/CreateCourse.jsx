@@ -34,7 +34,7 @@ function CreateCourseForm() {
 
     setError("")
     try{
-      const response = await axios.post("http://localhost:5000/admin/courses", course, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/admin/courses`, course, {
         headers:{
           authorization: token
         }

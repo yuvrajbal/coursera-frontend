@@ -10,7 +10,7 @@ export default function PurchasedCourses(){
   useEffect(() => {
     const fetchPurchasedCourses = async () => {
       try{
-        const response = await axios.get("http://localhost:5000/user/purchasedCourses", {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/purchasedCourses`, {
           headers: {
             authorization: token
           }

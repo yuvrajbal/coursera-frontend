@@ -17,13 +17,14 @@ export default function CourseCard({id , title, imageUrl ,description, price , m
     const buyCourse = async () => {
       if(courseId){
         try{
-          const response = await axios.post(`http://localhost:5000/user/courses/${courseId}`,null, {
+          const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/courses/${courseId}`,null, {
             headers: {
               authorization: token
             }
           })
           console.log(response.data);
         }catch(err){
+          alert("login to purchase a course")
           console.log("error while purchasing course")
         }
       }
@@ -45,7 +46,7 @@ export default function CourseCard({id , title, imageUrl ,description, price , m
 
       <img 
         src={imageUrl} 
-        className="w-full max-h-48 object-cover border-r-2 cursor-pointer " 
+        className="w-full max-h-44 object-cover border-r-2 cursor-pointer " 
         alt={"courseImage"}
         onClick={mode === "edit" ? editCourse : viewCourse}>
 

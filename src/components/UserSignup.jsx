@@ -23,7 +23,7 @@ export default function UserSignup(){
     const handleSignUpSubmission = async (event) => {
       event.preventDefault();
       try{
-        const response = await axios.post("http://localhost:5000/user/signup", {username, password});
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/signup`, {username, password});
         console.log(response.data.token);
         setToken(response.data.token)
         
