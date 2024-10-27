@@ -28,7 +28,7 @@ function App() {
   // localStorage.setItem("token", UserToken);
 
   return (
-    <div className="">
+    <div className="bg-neutral-950">
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>

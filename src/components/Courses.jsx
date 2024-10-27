@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from 'react'
 import CourseCard from './CourseCard'
 import axios from "axios";
+import {ClockLoader} from "react-spinners"
 // use axios here, similar to register and login
 const Courses = () => {
   const token = localStorage.getItem("token");
   const [courses, setCourses] = useState([]);
   const [loading,setLoading]= useState(true);
   const [error,setError ] = useState("");
- 
+  
   useEffect(() => {
 
     const fetchCourses = async () => {
@@ -32,7 +33,12 @@ const Courses = () => {
     fetchCourses();
   },[]);
 
-  if(loading) return <p>Loading..</p>
+  if(loading) return (<div className='flex justify-center items-center pt-32'>
+      <ClockLoader
+      color="#737373"
+      size={100}
+        />
+  </div>)
   if(error) return <p>{error}</p>  
   
   return (
